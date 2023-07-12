@@ -1,0 +1,170 @@
+/*================================================
+    VARIABLES
+  ================================================
+*/
+
+$color-violet: hsl(257, 40%, 49%);
+$color-magenta: hsl(300, 69%, 71%);
+
+// BREAKPOINT
+
+$bp-medium: 23.5em;
+$bp-large: 62.5em;
+/*================================================
+BASE STYLES
+================================================
+*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #fff;
+  background-color: $color-violet;
+  background-image: url(../images/bg-mobile.svg);
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: $bp-medium) {
+    background-image: url(../images/bg-desktop.svg);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+/*================================================
+    GENERAL STYLES
+  ================================================
+*/
+
+.container {
+  margin-inline: auto;
+  padding-block: 3rem;
+  width: calc(min(85vw, 95rem));
+  min-height: 95vh;
+}
+
+.flex {
+  margin-block: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3em;
+}
+
+.flex > * {
+  width: 100%;
+}
+
+.logo {
+  height: 4rem;
+}
+
+.hero-image {
+  flex-basis: 30rem;
+  flex-grow: 3;
+}
+
+.mockup {
+  width: 100%;
+}
+
+.story {
+  flex-basis: 30rem;
+  flex-grow: 1;
+  &__text {
+    margin-top: 3rem;
+  }
+}
+
+.btn {
+  display: block;
+  margin-inline: auto;
+  margin-top: 2rem;
+  width: 70%;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+  background-color: #fff;
+  color: $color-violet;
+  font-size: 1.6rem;
+  font-family: "Poppins";
+  text-align: center;
+  transition: all 0.2s;
+  box-shadow: 0 0.8rem 1rem rgba(#000000, 0.2);
+
+  @media screen and (min-width: $bp-medium) {
+    margin-left: 0;
+    width: 15rem;
+  }
+
+  &:hover {
+    background-color: $color-magenta;
+    color: #fff;
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(#000, 0.4);
+  }
+
+  &:active {
+    background-color: $color-magenta;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 0.7rem rgba(#000, 0.8); /* decrement blurry in the same proportion as Y to get the best effects*/
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.icon-container {
+  @media screen and (min-width: $bp-large) {
+    align-self: flex-end;
+  }
+}
+
+.icon {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  width: 3rem;
+  height: 3rem;
+
+  &:hover {
+    color: $color-magenta;
+    border-color: currentColor;
+  }
+}
+
+.icon + .icon {
+  margin-left: 1rem;
+}
